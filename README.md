@@ -40,10 +40,22 @@ and add its origin to `STRATEGIES` in `src/model/newsModel.ts` + the whitelist.
 
 ## App icon
 
-`icon/` contains an unofficial NOS-style icon (SVG source + 1024/512/192 px PNGs, rendered
-from the SVG with headless Chrome). The `.ehpk` manifest has **no icon field** — upload the
-PNG on the Even Hub **dev portal project page** instead. Since the icon mimics NOS branding,
-keep this app a **private build**; don't publish it to the public catalog.
+The Even Hub developer console asks for a **24×24, monochrome/grayscale icon** (color is
+rejected; the accepted form is a white foreground on a dark background, legible, with both
+foreground and background present — see the official App Submission & QA Guidelines and the
+community tool [g2-icon-studio](https://github.com/naotake/g2-icon-studio)).
+
+- **`icon/icon-24.png`** — the icon to submit: 24×24 pixel-art "NOS", white on black, true
+  Gray colorspace, 21.5% ink coverage. Generated deterministically by
+  `python3 icon/make_icon24.py` (stdlib only; also writes `icon-24-preview-x8.png` so you can
+  judge legibility). Edit the letter rectangles in that script to change the design.
+- **To include it:** in the dev console's app-submission form, upload `icon-24.png` in the
+  icon field. If the form only offers the built-in pixel-grid editor, open
+  [g2-icon-studio](https://naotake.github.io/g2-icon-studio/) (runs fully client-side),
+  drop `icon-24.png` in, and use it to copy/redraw or re-export in the exact accepted form.
+  The studio also runs the reject-avoidance checks (ink coverage, stray pixels, edge bleed).
+- `icon/icon.svg` + `icon-1024/512/192.png` (the red NOS-style icons) are **decorative only**
+  (GitHub, social preview) — they are color images and would be **rejected** by the Hub.
 
 ## Build & install
 

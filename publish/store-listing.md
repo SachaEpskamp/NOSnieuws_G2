@@ -11,7 +11,10 @@ Assets for the public-release submission. Screenshots are real app output
 | `screenshot-2-article.png` | Article reader, start of an article |
 | `screenshot-3-article-scroll.png` | Article reader, scrolled (progress footer) |
 
-Icon: use `../icon/icon-512.png` (or `icon-1024.png`, whichever size the portal asks for).
+Icon: use **`../icon/icon-24.png`** — the Hub requires a 24×24 **monochrome** icon
+(white-on-dark; color is rejected). Regenerate with `python3 ../icon/make_icon24.py`;
+tweak/verify with https://naotake.github.io/g2-icon-studio/ (checks ink coverage, stray
+pixels, edge bleed). The red `icon-*.png` files are for GitHub only, NOT for the Hub.
 
 ## Description (paste verbatim; fits the 2000-char limit)
 
