@@ -38,6 +38,16 @@ npm run typecheck          # tsc --noEmit
 npm run pack               # → NOSNieuws.ehpk (single-file build + evenhub pack)
 ```
 
+**Updating an installed build:** Even Hub identifies builds by the `version`
+in `app.json` — uploading a new `.ehpk` with the *same* version is treated as
+the already-installed app, and the glasses/phone keep the old copy (deleting
+and re-adding the build doesn't help). **Bump `version` in `app.json` (and
+`package.json`) before every `npm run pack` you intend to upload.** The
+running version is shown in the phone UI header (`v1.1.0`), so you can confirm
+an update actually landed. If the phone still shows a stale version right
+after installing, uninstall the app in the phone app, force-close the Even
+app, and install again.
+
 Install as a **private build**:
 1. Sign in at hub.evenrealities.com with your Even Realities phone-app account
    (restart the phone app once to unlock Developer Mode).

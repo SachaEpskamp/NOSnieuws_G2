@@ -5,6 +5,7 @@ import { eventHandler } from './presenter/eventPresenter';
 import phoneView from './view/PhoneView';
 import { MARQUEE_TICK_MS, REFRESH_INTERVAL_MS } from './config';
 import { feedById } from './feeds';
+import appManifest from '../app.json';
 
 let refreshInFlight = false;
 
@@ -93,7 +94,11 @@ async function main() {
     window.addEventListener('error', e => console.error('[uncaught]', e.message, e.error?.stack ?? ''));
     window.addEventListener('unhandledrejection', e => console.error('[unhandledrejection]', e.reason));
 
-    console.log('NOS Nieuws app starting...');
+    // Show which build is actually running — Even Hub dedupes uploads by
+    // version, so this is how you confirm an update really landed.
+    console.log(`NOS Nieuws app starting... v${appManifest.version}`);
+    const versionEl = document.getElementById('app-version');
+    if (versionEl) versionEl.textContent = `v${appManifest.version}`;
 
     // Dev hook: lets the browser console / test tooling drive the glasses UI
     // (e.g. __nos.display.onTap()) since there is no touchpad in a browser.

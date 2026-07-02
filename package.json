@@ -1,6 +1,6 @@
 {
   "name": "nos-even-g2",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Browse and read Dutch NOS news on the Even G2 smart glasses via Even Hub.",
   "type": "commonjs",
   "main": "index.js",
