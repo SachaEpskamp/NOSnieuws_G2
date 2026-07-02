@@ -1,4 +1,12 @@
-# NOS Nieuws voor Even G2
+# NOS Nieuws voor Even G2 (unofficial)
+
+> **⚠️ Unofficial app — not affiliated with NOS.** This is a personal, unofficial reader for
+> the public NOS RSS feeds. It is **not** made, endorsed, or supported by NOS (Nederlandse
+> Omroep Stichting). All news content and the NOS name/branding belong to NOS. The app simply
+> displays the publicly offered feeds from https://nos.nl/feeds and is intended for private,
+> personal use.
+>
+> *Onofficiële app — niet gemaakt door, verbonden aan of ondersteund door de NOS.*
 
 Browse and read Dutch NOS news on the Even Realities G2 smart glasses, via Even Hub.
 
@@ -29,6 +37,13 @@ falls back through public CORS proxies (corsproxy.io → allorigins → codetabs
 the first strategy that works is remembered. All proxy origins are whitelisted in
 `app.json`. If the proxies ever become unreliable, host a trivial proxy yourself
 and add its origin to `STRATEGIES` in `src/model/newsModel.ts` + the whitelist.
+
+## App icon
+
+`icon/` contains an unofficial NOS-style icon (SVG source + 1024/512/192 px PNGs, rendered
+from the SVG with headless Chrome). The `.ehpk` manifest has **no icon field** — upload the
+PNG on the Even Hub **dev portal project page** instead. Since the icon mimics NOS branding,
+keep this app a **private build**; don't publish it to the public catalog.
 
 ## Build & install
 

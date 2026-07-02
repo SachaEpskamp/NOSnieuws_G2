@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Unofficial NOS-style icon for the NOS Nieuws G2 app (personal, private build). -->
+  <defs>
+    <clipPath id="rounded">
+      <rect x="0" y="0" width="1024" height="1024" rx="180" ry="180"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#rounded)">
+    <rect x="0" y="0" width="1024" height="1024" fill="#e61e14"/>
+    <!-- NOS wordmark (bold italic, like the broadcaster's style) -->
+    <text x="512" y="500" text-anchor="middle"
+          font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+          font-size="330" font-weight="800" font-style="italic"
+          fill="#ffffff" letter-spacing="6">NOS</text>
+    <!-- subtitle -->
+    <text x="512" y="640" text-anchor="middle"
+          font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+          font-size="96" font-weight="600"
+          fill="#ffffff" letter-spacing="30">NIEUWS</text>
+    <!-- stylized G2 glasses -->
+    <g stroke="#ffffff" stroke-width="18" fill="none">
+      <rect x="300" y="720" width="170" height="96" rx="34"/>
+      <rect x="554" y="720" width="170" height="96" rx="34"/>
+      <path d="M470 754 q42 -26 84 0"/>
+      <path d="M300 760 h-52"/>
+      <path d="M724 760 h52"/>
+    </g>
+  </g>
+</svg>

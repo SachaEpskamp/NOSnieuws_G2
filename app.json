@@ -3,12 +3,12 @@
   "edition": "202601",
   "name": "NOS Nieuws",
   "author": "personal",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "min_app_version": "2.1.0",
   "min_sdk_version": "0.0.9",
   "entrypoint": "index.html",
-  "tagline": "Nederlands nieuws van de NOS op je bril",
-  "description": "Blader door NOS-nieuwsberichten op de Even G2. Kies op de telefoon welke feeds je wilt volgen; op de bril blader je door de koppen (schuiven) en open je artikelen (tikken).",
+  "tagline": "Onofficiële NOS-nieuwslezer voor je bril",
+  "description": "Onofficiële app: niet gemaakt door, verbonden aan of ondersteund door de NOS. Blader door berichten uit de publieke NOS RSS-feeds op de Even G2. Kies op de telefoon welke feeds je wilt volgen; op de bril blader je door de koppen (schuiven) en open je artikelen (tikken).",
   "permissions": [
     {
       "name": "network",
