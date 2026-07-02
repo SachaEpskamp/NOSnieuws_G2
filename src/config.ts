@@ -12,9 +12,10 @@ export const ARTICLE_VIEW_LINES = SCREEN_LINES - 1; // 9 text rows + 1 footer ro
 export const ARTICLE_SCROLL_LINES = 3;           // lines moved per slide in the reader
 
 // Idle marquee for the selected (too-long) headline in the list.
-export const MARQUEE_TICK_MS = 600;       // how often the marquee advances
-export const MARQUEE_STEP = 3;            // characters shifted per tick
-export const MARQUEE_EDGE_DWELL_TICKS = 3; // pause at the start/end of the title
+// One character per tick — larger steps are too jumpy to read on the HUD.
+export const MARQUEE_TICK_MS = 500;       // how often the marquee advances
+export const MARQUEE_STEP = 1;            // characters shifted per tick
+export const MARQUEE_EDGE_DWELL_TICKS = 4; // pause at the start/end of the title
 
 // ---- Input ----
 // Which physical slide direction maps to SCROLL_TOP/BOTTOM is undocumented;
