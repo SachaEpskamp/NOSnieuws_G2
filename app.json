@@ -1,0 +1,25 @@
+{
+  "package_id": "com.personal.noseveng2",
+  "edition": "202601",
+  "name": "NOS Nieuws",
+  "author": "personal",
+  "version": "1.0.0",
+  "min_app_version": "2.1.0",
+  "min_sdk_version": "0.0.9",
+  "entrypoint": "index.html",
+  "tagline": "Nederlands nieuws van de NOS op je bril",
+  "description": "Blader door NOS-nieuwsberichten op de Even G2. Kies op de telefoon welke feeds je wilt volgen; op de bril blader je door de koppen (schuiven) en open je artikelen (tikken).",
+  "permissions": [
+    {
+      "name": "network",
+      "desc": "Nodig om de NOS RSS-feeds op te halen (rechtstreeks of via een CORS-proxy).",
+      "whitelist": [
+        "https://feeds.nos.nl",
+        "https://corsproxy.io",
+        "https://api.allorigins.win",
+        "https://api.codetabs.com"
+      ]
+    }
+  ],
+  "supported_languages": ["en"]
+}

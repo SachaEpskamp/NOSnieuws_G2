@@ -1,0 +1,26 @@
+{
+  "name": "nos-even-g2",
+  "version": "1.0.0",
+  "description": "Browse and read Dutch NOS news on the Even G2 smart glasses via Even Hub.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "evenhub qr --path \"/\" --http && vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "pack": "npm run build -- --mode evenhub && evenhub pack app.json dist -o NOSNieuws.ehpk",
+    "qr": "evenhub qr -p 5173 --path \"/\" --http",
+    "sim": "vite && evenhub-simulator http://localhost:5173"
+  },
+  "dependencies": {
+    "@evenrealities/even_hub_sdk": "^0.0.9"
+  },
+  "devDependencies": {
+    "@evenrealities/evenhub-simulator": "^0.6.2",
+    "@types/node": "^25.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.2"
+  }
+}
