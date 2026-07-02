@@ -11,10 +11,12 @@ Assets for the public-release submission. Screenshots are real app output
 | `screenshot-2-article.png` | Article reader, start of an article |
 | `screenshot-3-article-scroll.png` | Article reader, scrolled (progress footer) |
 
-Icon: use **`../icon/icon-24.png`** — the Hub requires a 24×24 **monochrome** icon
-(white-on-dark; color is rejected). Regenerate with `python3 ../icon/make_icon24.py`;
-tweak/verify with https://naotake.github.io/g2-icon-studio/ (checks ink coverage, stray
-pixels, edge bleed). The red `icon-*.png` files are for GitHub only, NOT for the Hub.
+Icon: the Hub requires a 24×24 **monochrome** icon (white-on-dark; color is rejected), and
+the console only offers the built-in editor ("Create with a tool") — no upload. Hand-copy the
+design using `../icon/icon-24-grid.png` (gridded reference) and
+`../icon/DRAW_INSTRUCTIONS.md` (per-row fill runs). Target file: `../icon/icon-24.png`;
+regenerate everything with `python3 ../icon/make_icon24.py`. The red `icon-*.png` files are
+for GitHub only, NOT for the Hub.
 
 ## Description (paste verbatim; fits the 2000-char limit)
 

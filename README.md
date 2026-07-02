@@ -49,11 +49,15 @@ community tool [g2-icon-studio](https://github.com/naotake/g2-icon-studio)).
   Gray colorspace, 21.5% ink coverage. Generated deterministically by
   `python3 icon/make_icon24.py` (stdlib only; also writes `icon-24-preview-x8.png` so you can
   judge legibility). Edit the letter rectangles in that script to change the design.
-- **To include it:** in the dev console's app-submission form, upload `icon-24.png` in the
-  icon field. If the form only offers the built-in pixel-grid editor, open
-  [g2-icon-studio](https://naotake.github.io/g2-icon-studio/) (runs fully client-side),
-  drop `icon-24.png` in, and use it to copy/redraw or re-export in the exact accepted form.
-  The studio also runs the reject-avoidance checks (ink coverage, stray pixels, edge bleed).
+- **To include it:** the dev console's icon field only offers **"Create with a tool"**, which
+  opens the built-in 24×24 pixel-grid editor — there is no PNG upload. Copy the design by hand:
+  - `icon/icon-24-grid.png` — gridded reference (heavier lines every 4 cells) to draw from;
+  - `icon/DRAW_INSTRUCTIONS.md` — exact per-row runs (e.g. "row 7: columns 1-2, 5-6, 10-13,
+    18-22") plus an ASCII map. It's ~20 runs; with the editor's line/rect tools it takes a
+    couple of minutes.
+  - Alternatively open [g2-icon-studio](https://naotake.github.io/g2-icon-studio/) (fully
+    client-side), drop `icon-24.png` in, and use its zoomed editor + previews as the drawing
+    reference; it also runs the reject-avoidance checks (ink coverage, stray pixels, edge bleed).
 - `icon/icon.svg` + `icon-1024/512/192.png` (the red NOS-style icons) are **decorative only**
   (GitHub, social preview) — they are color images and would be **rejected** by the Hub.
 
