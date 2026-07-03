@@ -26,7 +26,16 @@ interface FetchStrategy {
     wrap: (url: string) => string;
 }
 
+// When served by the vite dev server (localhost), a same-origin '/feeds/…'
+// proxy is available (see vite.config.ts) — reliable in plain browsers AND in
+// the evenhub-simulator, whose WebView is rejected by some public CORS proxies.
+const onDevServer =
+    typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
+
 const STRATEGIES: FetchStrategy[] = [
+    ...(onDevServer
+        ? [{ id: 'devproxy', wrap: (u: string) => u.replace('https://feeds.nos.nl', '/feeds') }]
+        : []),
     { id: 'direct',     wrap: u => u },
     { id: 'corsproxy',  wrap: u => `https://corsproxy.io/?url=${encodeURIComponent(u)}` },
     { id: 'allorigins', wrap: u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}` },

@@ -1,15 +1,29 @@
 # Even Hub store listing — NOS Nieuws voor Even G2 (unofficial)
 
-Assets for the public-release submission. Screenshots are real app output
-(captured from the live app, rendered at the G2's native 576×288).
+Assets for the public-release submission.
 
-## Screenshots (576 × 288)
+## Screenshots (576 × 288, captured with the official simulator)
+
+**Review requires simulator captures** — a hand-made HUD mock-up was rejected with
+"Screenshot does not pass the standard. Please use the simulator (latest version)".
+These were taken with `evenhub-simulator` (latest) via its automation API:
+
+```bash
+npx vite --port 5173                                          # serve the app (devproxy active)
+npx evenhub-simulator --automation-port 9898 http://localhost:5173
+curl http://localhost:9898/api/screenshot/glasses -o shot.png # native 576×288 PNG
+# navigate first with: curl -X POST http://localhost:9898/api/input \
+#   -H 'Content-Type: application/json' -d '{"action":"down"}'   # up|down|click|double_click
+```
 
 | File | Shows |
 |---|---|
 | `screenshot-1-list.png` | Headline list with cursor, live NOS headlines |
 | `screenshot-2-article.png` | Article reader, start of an article |
 | `screenshot-3-article-scroll.png` | Article reader, scrolled (progress footer) |
+
+Tip: the marquee auto-scrolls the selected headline — send one `down` and screenshot within
+~2 s so the selected title is captured at its start.
 
 Icon: the Hub requires a 24×24 **monochrome** icon (white-on-dark; color is rejected), and
 the console only offers the built-in editor ("Create with a tool") — no upload. Hand-copy the

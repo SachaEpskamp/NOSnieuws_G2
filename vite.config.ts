@@ -12,6 +12,16 @@ export default defineConfig(({ command, mode }) => {
       // Allow the dev server to be reached from the phone / evenhub tooling by
       // any hostname or IP. Dev-only; the production build is static files.
       allowedHosts: true,
+      // Same-origin proxy for the NOS feeds so dev/simulator sessions don't
+      // depend on external CORS proxies (the Tauri simulator WebView is
+      // rejected by corsproxy.io). Dev-only; unused in installed builds.
+      proxy: {
+        '/feeds': {
+          target: 'https://feeds.nos.nl',
+          changeOrigin: true,
+          rewrite: (p: string) => p.replace(/^\/feeds/, ''),
+        },
+      },
     },
 
     // Relative paths so the built app works both from a hosted subpath and
